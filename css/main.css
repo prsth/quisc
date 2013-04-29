@@ -1,0 +1,219 @@
+/*  Здесь представлены общие классы, которые нужны всегда  */
+html
+{
+    overflow: scroll;
+}
+
+body
+{
+	margin: 0 auto;
+	padding: 0px;
+	background: #CCCCCC;
+	color: #444444;
+	/*font: normal 10pt Arial,Helvetica,sans-serif;*/
+    font: normal 11pt Georgia, Verdana, sans-serif;
+    background:  url(../images/bg_part.jpg) repeat left top;
+}
+
+#page
+{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#header
+{
+
+}
+
+#logo
+{
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+}
+
+#menubar
+{
+    float: right;
+    position: absolute;
+    top: -30px;
+    right: 50px;
+}
+
+#content
+{
+    position: relative;
+    background: #FFFFFF;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 0px 15px 1px #888888;
+    behavior: url(js/PIE2/PIE.htc);
+    /*position: relative;*/
+    /*top: -30px;*/
+}
+
+
+.clear
+{
+    clear: both;
+}
+
+.block
+{
+    display: block;
+}
+
+
+a
+{
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.workspace*/
+/*{*/
+    /*clear: both;*/
+    /*display: inline;*/
+    /*float: left;*/
+    /*width: 850px;*/
+/*}*/
+
+/*.hiding-form*/
+/*{*/
+    /*padding: 1em; */
+    /*position: relative;*/
+    /*border: 1px solid #aaaaaa;*/
+    /*width: 250px;*/
+    /*background-color: #DDDDDD;*/
+/*}*/
+
+/*.hiding-form input*/
+/*{*/
+    /*width: 95%;*/
+/*}*/
+
+/*.hiding-form button*/
+/*{*/
+    /*margin: auto;*/
+/*}*/
+
+/*.hiding-form textarea*/
+/*{*/
+    /*height: 5em;*/
+    /*width: 95%;*/
+    /*resize: vertical;*/
+/*}*/
+
+/*.hiding-form input[type="checkbox"]*/
+/*{*/
+    /*display: inline;*/
+    /*width: auto;*/
+/*}*/
+
+/*.color-red*/
+/*{*/
+    /*color: red;*/
+/*}*/
+
+/*.color-black*/
+/*{*/
+    /*color: black;*/
+/*}*/
+
+
+
+/*#submenu*/
+/*{*/
+    /*float: left;*/
+    /*position: relative;*/
+    /*width: 150px;*/
+    /*height: 100%;*/
+/*}*/
+
+/*#submenu .active*/
+/*{*/
+    /*color: red;*/
+/*}*/
+
+/*#submenu ul li*/
+/*{            */
+	/*display: block;*/
+        /*padding: 2px;         */
+/*}*/
+
+/*#mainmenu*/
+/*{*/
+        /*float: right;*/
+        /*position: relative;*/
+	/*top: 30px;       */
+/*}*/
+
+/*#mainmenu ul*/
+/*{       */
+	/*padding: 0;*/
+	/*margin: 0;*/
+	/*padding: 0.4em 0 0.3em 0;*/
+/*}*/
+
+/*#mainmenu ul li*/
+/*{            */
+	/*display: inline;*/
+/*}*/
+
+/*#mainmenu ul li a*/
+/*{*/
+	/*padding: 0.4em 0.4em;*/
+	/*color: #D0D0D0;*/
+	/*text-decoration: underline;*/
+	/*font-weight: bold;*/
+        /*font-size: 0.75em;*/
+/*}*/
+
+#mainmenu ul li a:hover, #mainmenu ul li a.active
+{
+	/*background: #E6F2FF;*/	
+        color: white;
+}
+
+
+
+#footer
+{
+	padding: 15px;
+	margin: 20px 0 0 0;
+	font-size: 0.8em;
+	text-align: center;
+	border-top: 1px solid #EEE;
+}
+

@@ -1,0 +1,57 @@
+#mainmenu
+{
+    position: relative;
+    float: left;
+    z-index: 1;
+    font-size: 0.8em;
+    margin-right: -30px;
+}
+
+.mainmenuitem
+{
+    margin-left: -30px;
+    position: relative;
+    float: right;
+}
+
+#mainmenu img
+{
+    display: inline;
+    margin: 0px;
+    padding: 0;
+    float: left;
+    position: relative;
+}
+
+#mainmenu .mainmenutext
+{
+    float: left;
+    background:  url(../images/page_white_middle.png)  repeat-x left top;
+    height: 30px;
+    min-width: 60px;
+    text-align: center;
+}
+
+#mainmenu a
+{
+    position: relative;
+    top: 10px;
+    border-bottom: 1px dashed;
+    text-decoration: none;
+    color: #444444;
+}
+
+#mainmenu .active a
+{
+    color: #E54419;
+}
+
+#mainmenu a:hover
+{
+    color: #E54419;
+}
+
+#mainmenu .active img
+{
+    z-index: 2;
+}

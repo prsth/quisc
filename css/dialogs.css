@@ -1,0 +1,113 @@
+.ui-dialog-custom {
+	/*position: absolute;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	padding: 5px 30px 5px 30px;
+	outline: 0;
+    border: 0;
+    background-color: #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    behavior: url(js/PIE2/PIE.htc);
+    box-shadow: 0px 0px 5px 1px #999999;
+    width: 140px;
+}
+
+.ui-dialog-custom .ui-icon-closethick 
+{ 
+    background: url(../images/suvo/x_ok.png);
+    background-position: 0px 0px;
+}
+
+.ui-dialog-custom .ui-state-hover .ui-icon-closethick
+{
+    background: url(../images/suvo/x_ok.png);
+    background-position: 36px 0px;
+}
+
+.ui-dialog-custom .ui-dialog-titlebar {
+    border: 0;
+    border-radius: 0px;
+    background-color: #FFF;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.ui-dialog-custom .ui-state-hover {
+    border: 0px;
+    background: none;
+    /*background: #dadada url(images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;*/
+    /*font-weight: normal;*/
+    /*color: #212121;*/
+}
+
+.ui-dialog-custom .ui-dialog-titlebar-close {
+    position: absolute;
+    right: -38px;
+    top: -18px;
+    width: 33px;
+    /*margin: -10px 0 0 0;*/
+    /*padding: 1px;*/
+    height: 33px;
+}
+
+.ui-dialog-custom .ui-icon {
+    width: 33px;
+    height: 33px;
+}
+
+.ui-dialog-custom .ui-dialog-title {
+	/*float: left;*/
+	margin: 0 0;
+	white-space: nowrap;
+    padding: 0 0;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: center;
+    color: #277670;
+}
+
+.ui-dialog-custom .ui-dialog-custom-titlebar-close {
+	position: absolute;
+	right: .3em;
+	top: 50%;
+	width: 21px;
+	margin: -10px 0 0 0;
+	padding: 1px;
+	height: 20px;
+}
+.ui-dialog-custom .ui-dialog-content {
+	position: relative;
+	border: 0;
+	padding: 0;
+	background: none;
+	overflow: auto;
+    text-align: center;
+}
+.ui-dialog-custom .ui-dialog-custom-buttonpane {
+	text-align: left;
+	border-width: 1px 0 0 0;
+	background-image: none;
+	margin-top: .5em;
+	padding: .3em 1em .5em .4em;
+}
+.ui-dialog-custom .ui-dialog-custom-buttonpane .ui-dialog-custom-buttonset {
+	float: right;
+}
+.ui-dialog-custom .ui-dialog-custom-buttonpane button {
+	margin: .5em .4em .5em 0;
+	cursor: pointer;
+}
+.ui-dialog-custom .ui-resizable-se {
+	width: 12px;
+	height: 12px;
+	right: -5px;
+	bottom: -5px;
+	background-position: 16px 16px;
+}

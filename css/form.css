@@ -1,0 +1,109 @@
+/**
+ * CSS styles for form and input fields.
+ *
+ * These styles are used with form and input fields generated via yiic script.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright &copy; 2008-2009 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+ 
+.field
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #277670;
+    font-size: 0.85em;
+}
+ 
+.field label
+{
+    /*display: block;*/
+    position: relative;
+    float: left;
+    margin-left: 15px;
+}
+
+.field input
+{
+    border-radius: 3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    behavior: url(js/PIE2/PIE.htc);
+    background: url(../images/input_bg_30.png) repeat-x;
+    /*background-size: 100% 24px;*/
+    border: 0px;
+    padding-left: 3px;
+    height: 30px;
+    width: 90%;
+    font-size: 1.2em;
+}
+
+.field input:focus
+{
+    outline-color: #E54419;
+    outline-style: dotted;
+    outline-width: 1px;
+}
+
+.field .errorMessage
+{	
+    float: right;
+    color: red;
+    font-size: 0.7em;
+    position: relative;
+    bottom: -3px;
+    right: 18px;
+}
+
+
+
+.ui-form-buttontext
+{
+    position: relative;
+    top: 8px;
+    color: #E54419;
+}
+
+
+.ui-icon-formbutton {
+
+    margin: 0;
+
+    display: block;
+    background-image: url(../images/buttons.png);
+    width: 158px;
+    height: 36px;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Helvetica;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.ioba{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.ui-icon-formbutton:hover
+{
+    background-position: 0px -43px;
+}
+
+

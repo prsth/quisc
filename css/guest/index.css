@@ -1,0 +1,100 @@
+#guest-index-quisc
+{
+    float: left;
+    margin-right: 30px;
+}
+
+#guest-index-info
+{
+    display: inline;
+    /*position: relative;*/
+    /*top: 0px;*/
+    text-align: justify;
+}
+
+#guest-index-video
+{
+    float: right;
+    margin-left: 30px;
+}
+
+#guest-index-slogan
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#guest-index-benefitsfield
+{
+    margin-top: 30px;
+}
+
+#guest-index-firstbenefit
+{
+    float: left;
+    margin-right: 60px;
+}
+
+#guest-index-secondbenefit
+{
+    margin-right: 60px;
+    float: left;
+}
+
+#guest-index-thirdbenefit
+{
+    float: left;
+}
+
+
+.guest-index-benefit
+{
+    width: 240px;
+    height: 350px;
+    background: #6EB6B3;
+    display: inline-table;
+    padding: 20px 40px 20px 40px;
+
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    behavior: url(js/PIE2/PIE.htc);
+}
+
+.guest-index-benefit-content
+{
+    background: #FFFFFF;
+    /*display: table;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*margin: 15px 30px 15px 30px;*/
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    behavior: url(js/PIE2/PIE.htc);
+    padding: 20px;
+    height: 100%;
+}
+
+.guest-index-benefit-content .header_med_dark
+{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.guest-index-benefit-icon
+{
+    background: url(../../images/suvo/icons_steps.png);
+    width: 55px;
+    height: 60px;
+    margin: 0 auto;
+}

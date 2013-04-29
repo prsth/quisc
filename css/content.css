@@ -1,0 +1,32 @@
+.header_big_red
+{
+    color: #E54419;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.header_med_red
+{
+    color: #E54419;
+    font-size: 1.5em;
+}
+
+.header_big_dark
+{
+    color: #277670;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header_med_dark
+{
+    color: #277670;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.imagine
+{
+    font-style: italic;
+    font-size: 0.9em;
+}
