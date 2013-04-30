@@ -1,0 +1,259 @@
+--
+-- PostgreSQL database dump
+--
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET escape_string_warning = off;
+
+--
+-- Name: plpgsql; Type: PROCEDURAL LANGUAGE; Schema: -; Owner: postgres
+--
+
+CREATE PROCEDURAL LANGUAGE plpgsql;
+
+
+ALTER PROCEDURAL LANGUAGE plpgsql OWNER TO postgres;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: role; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE role (
+    role_id uuid,
+    name character varying(50)
+);
+
+
+ALTER TABLE public.role OWNER TO postgres;
+
+--
+-- Name: social_network; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE social_network AS ENUM (
+    'FACEBOOK',
+    'GOOGLE',
+    'LINKEDIN'
+);
+
+
+ALTER TYPE public.social_network OWNER TO postgres;
+
+--
+-- Name: team; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE team (
+    team_id uuid NOT NULL,
+    name character varying(255),
+    info character varying(500),
+    private boolean,
+    picture boolean
+);
+
+
+ALTER TABLE public.team OWNER TO postgres;
+
+--
+-- Name: user; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE "user" (
+    user_id uuid NOT NULL,
+    password character varying(100),
+    firstname character varying(100),
+    lastname character varying(100),
+    email character varying(50),
+    private boolean,
+    picture boolean,
+    service social_network,
+    ext_user_id bigint
+);
+
+
+ALTER TABLE public."user" OWNER TO postgres;
+
+--
+-- Name: user_team; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE user_team (
+    user_id uuid NOT NULL,
+    team_id uuid NOT NULL,
+    role_id uuid
+);
+
+
+ALTER TABLE public.user_team OWNER TO postgres;
+
+--
+-- Name: russian_ispell; Type: TEXT SEARCH DICTIONARY; Schema: public; Owner: postgres
+--
+
+CREATE TEXT SEARCH DICTIONARY russian_ispell (
+    TEMPLATE = pg_catalog.ispell,
+    dictfile = 'russian', afffile = 'russian', stopwords = 'russian' );
+
+
+ALTER TEXT SEARCH DICTIONARY public.russian_ispell OWNER TO postgres;
+
+--
+-- Data for Name: role; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY role (role_id, name) FROM stdin;
+\.
+
+
+--
+-- Data for Name: team; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY team (team_id, name, info, private, picture) FROM stdin;
+fcdce571-2565-af2d-e417-27782a7c7505	fffffff	rrrrrrrrrrrrrrrr	t	\N
+00f06bb2-324c-afcf-c467-2505cd16a5f6	fffffff	rrrrrrrrrrrrrrrr	t	\N
+b786b5c0-ad4d-03ad-6e9a-780b39ae1867	fffffff	rrrrrrrrrrrrrrrr	t	\N
+8abaf7c6-e277-f180-d9d5-e8390020bce8	fffffff	rrrrrrrrrrrrrrrr	t	\N
+4107f0ca-d675-5c67-618c-2ea610f92a8a	fffffff	rrrrrrrrrrrrrrrr	t	\N
+18c894f3-dda6-a5d9-a23b-f1a36a5d867c	fffffff	rrrrrrrrrrrrrrrr	t	\N
+8c18cd80-434a-24ef-40d9-3f3bf421b193	fffffff	rrrrrrrrrrrrrrrr	t	t
+7585baac-ff89-da80-2ab3-ecaee606d505	fffffff	rrrrrrrrrrrrrrrr	t	t
+783a7c5d-d85f-fa60-668c-210826bc8da5	fffffff	rrrrrrrrrrrrrrrr	t	t
+6ebc783c-30b2-5660-aae6-8f87006420f8	fffffff	rrrrrrrrrrrrrrrr	t	t
+c88b4052-bb2c-c79c-fc52-c2f014e48fdc	fffffff	rrrrrrrrrrrrrrrr	t	t
+9e4b0d93-4871-5ca0-2a85-17d5ab04338a	fffffff	rrrrrrrrrrrrrrrr	t	t
+549c812a-fe6a-0c72-d585-51300389400c	fffffff	rrrrrrrrrrrrrrrr	t	t
+8b42324b-75c1-0e7e-5cb9-3973a386d72a	fffffff	rrrrrrrrrrrrrrrr	t	t
+ff69e594-b759-f425-1939-7f8b65e69620	fffffff	fewfewfewffffffffffffffff	f	f
+9fad8039-1627-174c-e2f1-5b26fffb7d47	fffffffju	fewfewfewffffffffffffffffjur	f	f
+\.
+
+
+--
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "user" (user_id, password, firstname, lastname, email, private, picture, service, ext_user_id) FROM stdin;
+56393db5-2fd1-b489-f142-97a2b3783574	$2a$10$v5CHFIL0bVp0zyRdpayxLelI3O5w0bDpj7QFLLg9PvsA7jUtkoyTq	7hh6h4	h76hh76	aa@aa.a	f	f	\N	\N
+4483c5cb-5704-704f-f0e4-6b0cfacbf6c8	$2a$10$c8mKu6nF0x9KUStcOzvmH.IeNxlM6IsEng.veTVW1J/UlNrw8zc6u	Johnny	Thefuckingwalker	aa@aa.aa	f	f	\N	\N
+b8069bff-7ded-1440-7012-edce1e8a16dc	$2a$10$Ygb7L48lzH1mdJUC9yE7EODrK.mTYjv5Ud6xNK0KOGcb3j6wchP1O	jonh	smith	aa@a.aa	f	f	\N	\N
+2c23920c-734e-4831-8a8e-a9aeea028cc3	$2a$10$8OvXPGeZbZlRq.w.cA.dBOYlrSPcv6tgpJl7QAZjIskXgjQ9D5RVa	jonh	smith	aa@a.a	f	f	\N	\N
+8b88a9e7-d166-075f-c3fd-dd4abddde921	$2a$10$C9aFkNeeYxB.P5gNcSQenu.MTzI4Z57.Bn9K3oT54IrTGTC5zS7oS	qwe	qwe	bb@bb.bb	f	f	\N	\N
+d187d4a5-6bf7-f909-66e6-c538794a408f	$2a$10$fgFgzAo9F7UYctuDxqtIWOJGm1Jj470xCyW9hRmiGsJWyQjC/RnJC	qwe	qwe	bb@bb.b	f	f	\N	\N
+272c3bda-245f-a390-9a46-55c6d8bda5e9	$2a$10$X84TV/eqPUlu11dU41ao5eoBZbXOGnOAYSAF66lpI1ssjrOqCKRyS	qwe	qwe	bb@b.b	f	f	\N	\N
+792b0e95-a075-8338-d379-4d52eeeac633	$2a$10$5LHRMOpz5yj6R9/GfGHSve2rWFwhtOuUbSjv/17bi9LRouMtXwSMa	qwe	qwe	b@b.b	f	f	\N	\N
+ddd4477c-18f7-6e26-4c48-494383e08754	$2a$10$qO2p5CvSHKPFrPIXTBAfY.Uaw1aBoo0O6Nt6aRcEdbUtenvMPtQPW	qwe	qwe	b@b.bc	f	f	\N	\N
+ac701190-ae79-9e49-9b8e-8f255d7e3b8a	$2a$10$gFXUiuO/k6lDM5czJV.TrugcokuaghE7G97t0ykGL8YNux.ACPmP2	qwe	qwe	b@b.c	f	f	\N	\N
+af7886ff-325b-37fc-ac70-e0c666e85a88	$2a$10$OwDXY7wu2sXya8pvWz2tpOFKKa8to1g5DLhuSTJEiuWtHQla0UDX.	qwe	qwe	b@c.c	f	f	\N	\N
+99abef7c-57de-849f-eb11-79b0ac30e3ce	$2a$10$95o3GFrC4ZOHr//vu7pw4uX/gKl6wB2nIkxcopnEnJ5qijsWn9SqS	qwe	qwe	c@c.c	f	f	\N	\N
+23a45f22-0f84-38cf-2bd2-6d5d46d877ca	$2a$10$D9iCryVFCJn7y3P2CqhST.m/CR7/Vld1dsbRkG1bqzhJkPew7mzQW	123	123	aa@aa.aaa	f	f	\N	\N
+d0ad8b03-9432-9f11-348e-d6469ecf1b1a	$2a$10$GIKg5iGshK4S1.Es2frA4Omb5HE8E/X1czY93W6X5llBqVY.0Mjh6	uuu	uuu	aa@aa.aau	f	f	\N	\N
+5d63d4d2-4942-ba0b-6298-91dbcd2b94bb	$2a$10$Zlmj8sDsdwhMA1ahbyE4Yu3QA8fEsGgjeI0sdRk7pbyqTT6pLn1Zi	yyyy	yyy	ya@aa.aa	f	f	\N	\N
+54d05d70-1b04-0412-f90d-af806f3a8dc2	$2a$10$tZJ0P6Ag7YVDY2l8KOuUa.hRKUKp0UZqFPMJDbWuJ3WpdDA4JubLi	qwe	qwe	qq@qq.qq	f	f	\N	\N
+9fb81678-ee6b-f9f7-e32c-474ed2180a54	$2a$10$ObiIXOwrunH/KzaYqnm/muko4eBTqwpWbzi4tOQulNIiOnuV8JFo2	eee	eee	e@e.e	f	f	\N	\N
+1c029ef7-24d5-3834-2636-fc88cbe53b83	\N	Ivan	Yaremchuk	face@face.fa	f	f	FACEBOOK	100000868496806
+\.
+
+
+--
+-- Data for Name: user_team; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY user_team (user_id, team_id, role_id) FROM stdin;
+9fb81678-ee6b-f9f7-e32c-474ed2180a54	9fad8039-1627-174c-e2f1-5b26fffb7d47	\N
+\.
+
+
+--
+-- Name: team_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY team
+    ADD CONSTRAINT team_pkey PRIMARY KEY (team_id);
+
+
+--
+-- Name: user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY "user"
+    ADD CONSTRAINT user_pkey PRIMARY KEY (user_id);
+
+
+--
+-- Name: user_team_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY user_team
+    ADD CONSTRAINT user_team_pkey PRIMARY KEY (user_id, team_id);
+
+
+--
+-- Name: user_team_team_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY user_team
+    ADD CONSTRAINT user_team_team_id_fkey FOREIGN KEY (team_id) REFERENCES team(team_id);
+
+
+--
+-- Name: user_team_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY user_team
+    ADD CONSTRAINT user_team_user_id_fkey FOREIGN KEY (user_id) REFERENCES "user"(user_id);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT USAGE ON SCHEMA public TO PUBLIC;
+
+
+--
+-- Name: team; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON TABLE team FROM PUBLIC;
+REVOKE ALL ON TABLE team FROM postgres;
+GRANT ALL ON TABLE team TO postgres;
+GRANT ALL ON TABLE team TO inform;
+
+
+--
+-- Name: user; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON TABLE "user" FROM PUBLIC;
+REVOKE ALL ON TABLE "user" FROM postgres;
+GRANT ALL ON TABLE "user" TO postgres;
+GRANT ALL ON TABLE "user" TO inform;
+
+
+--
+-- Name: user_team; Type: ACL; Schema: public; Owner: postgres
+--
+
+REVOKE ALL ON TABLE user_team FROM PUBLIC;
+REVOKE ALL ON TABLE user_team FROM postgres;
+GRANT ALL ON TABLE user_team TO postgres;
+GRANT ALL ON TABLE user_team TO inform;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
